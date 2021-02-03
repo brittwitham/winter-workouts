@@ -1,0 +1,27 @@
+{
+  "name": "winter-workouts",
+  "version": "1.0.0",
+  "description": "A simple app developed in response to being an Aussie in a near-arctic climate. 🥶",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "node-cron": "^2.0.3",
+    "node-fetch": "^2.6.1",
+    "twilio": "^3.55.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brittwitham/winter-workouts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brittwitham/winter-workouts/issues"
+  },
+  "homepage": "https://github.com/brittwitham/winter-workouts#readme"
+}
