@@ -73,4 +73,10 @@ function constructMessage(curConds) {
   return textMessage;
 }
 
-module.exports = constructMessage;
+module.exports = {
+  constructMessage,
+  buildOutfit,
+  reassembleOutfit,
+  bailMessage,
+  goMessage,
+};
