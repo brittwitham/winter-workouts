@@ -14,6 +14,11 @@ The idea is that if you manage to put on these items in your pre-coffee haze the
 
 A frontend is currently being built for the app to make it more easily usable, but those interested in trying it can clone the repo and replace the content of the "wardrobe.js" file with their own gear. Make sure there are no gaps in temperature ranges and that at least a couple items are added for wind/rain/sun. You'll also need a Twilio account, after which you can export all the necessary values to a .env file.
 
+To run, navigate to the `src` folder and run:
+```
+node index.js
+```
+
 ## To-dos
 
 - Build user interface (in progress)
