@@ -23,7 +23,7 @@ node index.js
 
 - Build user interface (in progress)
 - Add more greetings & quotes
-- Testing
+- ~~Testing~~ 
 - Error handling
 
 ## Contributors
