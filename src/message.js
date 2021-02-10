@@ -1,20 +1,15 @@
-const wardrobe = require("./data/wardrobe.js");
-const quotes = require("./data/quotes.js");
-const greetings = require("./data/greetings.js");
+const wardrobe = require('./data/wardrobe.js');
+const quotes = require('./data/quotes.js');
+const greetings = require('./data/greetings.js');
 
-const { extractNames, capitalize, randomize } = require("./utils/utils.js");
-
-const greeting = randomize(greetings);
+const { extractNames, capitalize, randomize } = require('./utils/utils.js');
 
 function buildOutfit(temp, clouds, wind, rain) {
   outfit = [];
 
   // Check for items required for current temp
   outfit.push(
-    wardrobe.filter(
-      (el) =>
-        el.temp_range && el.temp_range[0] <= temp && el.temp_range[1] >= temp
-    )
+    wardrobe.filter((el) => el.temp_range && el.temp_range[0] <= temp && el.temp_range[1] >= temp)
   );
   // check for items required for cloud cover, wind & rain
   if (!clouds) {
@@ -31,19 +26,19 @@ function buildOutfit(temp, clouds, wind, rain) {
 
 function reassembleOutfit(outfit) {
   flatOutfit = outfit.flat();
-  const tops = flatOutfit.filter((el) => el.type === "tops");
-  const pants = flatOutfit.filter((el) => el.type === "pants");
-  const accessories = flatOutfit.filter((el) => el.type === "accessories");
+  const tops = flatOutfit.filter((el) => el.type === 'tops');
+  const pants = flatOutfit.filter((el) => el.type === 'pants');
+  const accessories = flatOutfit.filter((el) => el.type === 'accessories');
   return [tops, pants, accessories];
 }
 
 function bailMessage(temp) {
-  return `${greeting}! Hit the snooze button, it's ${temp}° and ${
-    temp < -20 ? "too cold" : "too hot"
+  return `${randomize(greetings)}! Hit the snooze button, it's ${temp}° and ${
+    temp < -20 ? 'too cold' : 'too hot'
   } to run.`;
 }
 function goMessage(temp, conditions, tops, pants, accessories) {
-  return `${greeting}! It is ${temp}° and ${conditions}. Here's today's running gear:
+  return `${randomize(greetings)}! It is ${temp}° and ${conditions}. Here's today's running gear:
 
 👕: ${capitalize(extractNames(tops))}
 👖: ${capitalize(extractNames(pants))}
@@ -57,7 +52,7 @@ function constructMessage(curConds) {
   const temp = curConds.main.feels_like;
   const clouds = curConds.clouds.all;
   const wind = curConds.wind.speed;
-  const rain = curConds.rain?.["1h"]; // No rain if undefined
+  const rain = curConds.rain?.['1h']; // No rain if undefined
 
   // Find all the nececessary gear for the conditions
   outfit = buildOutfit(temp, clouds, wind, rain);

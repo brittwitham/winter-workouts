@@ -11,10 +11,16 @@
     "twilio": "^3.55.1"
   },
   "devDependencies": {
-    "jest": "^26.6.3"
+    "eslint": "^7.19.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1"
   },
   "scripts": {
-    "test": "jest"
+    "start": "node src/index.js",
+    "test": "jest",
+    "test:watch": "jest --watchAll"
   },
   "jest": {
     "collectCoverage": true,

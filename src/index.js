@@ -1,4 +1,4 @@
-const constructMessage = require("./message.js");
+const { constructMessage } = require("./message.js");
 const fetch = require("node-fetch");
 const cron = require("node-cron");
 require("dotenv").config({ path: `${__dirname}/../.env` });
